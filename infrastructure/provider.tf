@@ -13,6 +13,17 @@ terraform {
       version = "2.6.0"
     }
   }
+  cloud {
+    # The cloud block is used for connecting to the Terraform Cloud remote backend
+    organization = ""
+    workspaces {
+      # Mutliple workspaces can be defined here
+      tags = [
+        # Tags can be used to filter workspaces in the Terraform Cloud
+        ""
+      ]
+    }
+  }
   required_version = ">= 1.9.0"
 }
 
